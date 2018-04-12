@@ -1,8 +1,11 @@
 use std::io;
+mod confusables;
 
 fn main() {
   let mut input = String::new();
   let mut output = String::new();
+
+  confusables::initialize();
 
   match io::stdin().read_line(&mut input) {
     Ok(_n) => {
