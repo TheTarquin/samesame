@@ -1,0 +1,6 @@
+[package]
+name = "puny_check"
+version = "0.1.0"
+authors = ["dgabler"]
+
+[dependencies]
