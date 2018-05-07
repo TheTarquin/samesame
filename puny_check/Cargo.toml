@@ -1,0 +1,12 @@
+[package]
+name = "puny_check"
+version = "0.1.0"
+authors = ["dgabler"]
+
+[dependencies]
+regex = "0.2"
+csv = "1.0.0-beta.5"
+
+[dependencies.url]
+git = "https://github.com/servo/rust-url"
+features = ["query_encoding"]
