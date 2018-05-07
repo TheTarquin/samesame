@@ -1,0 +1,7 @@
+[package]
+name = "samesame"
+version = "0.0.1"
+authors = ["Aaron M Brown <aaron@aaronmbrown.net>"]
+
+[dependencies]
+rand = "0.4"
