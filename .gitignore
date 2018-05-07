@@ -1,2 +1,6 @@
 # ignore compiled executable
 samesame
+
+# ignore Cargo cruft
+Cargo.lock
+target/*
