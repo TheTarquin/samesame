@@ -1,9 +1,10 @@
 extern crate rand;
-use rand::Rng;
+use self::rand::Rng;
 
+use std::string::String;
 use std::collections::HashMap;
 
-pub fn map(input: &str) -> &str {
+pub fn map(input: String) -> String {
         let mut confusables = HashMap::new();
     
     confusables.insert('A', vec!['\u{FF21}','\u{1D400}','\u{1D434}',
@@ -118,8 +119,9 @@ pub fn map(input: &str) -> &str {
     let mut input_chars = input.chars().peekable();
     while input_chars.peek() != None {
         let next = input_chars.next().unwrap();
-        let next_out = rand::thread_rng().choose(confusables.get(next));
-        output.push(next_out);
+        //TODO: handle the error cases here instead of just blindly unwrapping.
+        let next_out = rand::thread_rng().choose(confusables.get(&next).unwrap());
+        output.push(*next_out.unwrap());
     }
     return output;
 }
