@@ -11,3 +11,4 @@ TODO:
 * Whitespace confusables
 * Zero-width nonbreaking space (since it's not technically a whitespace char, according to unicode spec.)
 * Create a special "discrete mode" that emphasizes characters with minimal visual difference in most contexts.
+* TEST NEW RAND LOGIC
