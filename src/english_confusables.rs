@@ -119,6 +119,11 @@ pub fn map(input: String) -> String {
     let mut input_chars = input.chars().peekable();
     while input_chars.peek() != None {
         let next = input_chars.next().unwrap();
+        //don't process new lines, but allow them in inputs
+        if next == '\n' {
+            output.push(next);
+            continue;
+        }
         //TODO: handle the error cases here instead of just blindly unwrapping.
         let next_out = rand::thread_rng().choose(confusables.get(&next).unwrap());
         output.push(*next_out.unwrap());
