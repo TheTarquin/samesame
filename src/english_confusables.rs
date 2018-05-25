@@ -85,10 +85,8 @@ pub fn map(input: String) -> String {
     confusables.insert('k', vec!['\u{1D424}','\u{FF4B}','\u{1D458}','\u{1D48C}','\u{1D4C0}','\u{1D4F4}','\u{1D528}','\u{1D55C}','\u{1D590}','\u{1D5C4}','\u{1D4F8}','\u{1D62C}','\u{1D660}','\u{1D694}','\u{1D0B}','\u{0138}','\u{03BA}','\u{03F0}','\u{1D6CB}','\u{1D6DE}','\u{1D705}','\u{1D718}','\u{1D73F}','\u{1D752}','\u{1D779}','\u{1D78C}','\u{1D7B3}','\u{1D7C6}','\u{2C95}','\u{043A}','\u{0199}','\u{049B}']);
 
     confusables.insert('l', vec!['\u{FF4C}','\u{05C0}','\u{007C}','\u{2223}','\u{FFE8}','\u{0031}','\u{0661}','\u{06F1}','\u{10320}','\u{1E8C7}','\u{1D7CF}','\u{1D7D9}','\u{1D7F7}','\u{0049}','\u{FF29}','\u{2160}','\u{2110}','\u{2111}','\u{1D408}','\u{1D43C}','\u{1D470}','\u{1D4D8}','\u{1D540}','\u{1D574}','\u{1D5A8}','\u{1D5DC}','\u{1D610}','\u{1D644}','\u{1D678}','\u{0196}','\u{217C}','\u{2113}','\u{1D425}','\u{1D459}','\u{1D48D}','\u{1D4C1}','\u{1D4F5}','\u{1D529}','\u{1D55D}','\u{1D591}','\u{1D5C5}','\u{1D5F9}','\u{1D62D}','\u{1D661}','\u{1D695}','\u{01C0}','\u{0399}','\u{1D6B0}','\u{1D6EA}','\u{1D724}','\u{1D75E}','\u{1D798}','\u{2C92}','\u{0406}','\u{04C0}','\u{05D5}','\u{05DF}','\u{0627}','\u{1EE00}','\u{1EE80}','\u{FE8E}','\u{FE8D}','\u{07CA}','\u{2D4F}','\u{16C1}','\u{A4F2}','\u{1028A}','\u{10309}','\u{0142}','\u{026D}','\u{019A}','\u{026B}','\u{0625}','\u{FE88}','\u{FE87}','\u{0673}','\u{2488}','\u{0623}','\u{FE84}','\u{FE83}','\u{0672}','\u{0675}']);
-//TODO: need to get confusables for 'm', since they aren't in confusables.txt.
-/*
-    confusables.insert('m', vec!['\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}',]);
-*/
+
+    confusables.insert('m', vec!['\u{11700}','\u{FF4D}','\u{1D48E}','\u{1D62E}','\u{118E3}','\u{1D592}','\u{1D426}','\u{1D5C6}','\u{1D52A}','\u{1D55E}','\u{1D4C2}','\u{1D662}','\u{1D4F6}','\u{1D696}','\u{1D45A}','\u{1D5FA}','\u{217F}']);
 
     confusables.insert('n', vec!['\u{FF4E}','\u{1D427}','\u{1D45B}','\u{1D48F}','\u{1D4C3}','\u{1D4F7}','\u{1D52B}','\u{1D55F}','\u{1D593}','\u{1D5C7}','\u{1D5FB}','\u{1D62F}','\u{1D663}','\u{1D697}','\u{03C0}','\u{03D6}','\u{213C}','\u{1D6D1}','\u{1D6E1}','\u{1D70B}','\u{1D71B}','\u{1D745}','\u{1D755}','\u{1D77F}','\u{1D78F}','\u{1D7B9}','\u{1D7C9}','\u{1D28}','\u{043F}','\u{0578}','\u{057C}','\u{0273}','\u{019E}','\u{03B7}','\u{1D6C8}','\u{1D702}','\u{1D73C}','\u{1D776}','\u{1D7B0}','\u{1D70}','\u{0146}','\u{0272}']);
 
@@ -107,10 +105,8 @@ pub fn map(input: String) -> String {
     confusables.insert('u', vec!['\u{FF55}','\u{1D42E}','\u{1D462}','\u{1D496}','\u{1D4CA}','\u{1D4FE}','\u{1D532}','\u{1D566}','\u{1D59A}','\u{1D5CE}','\u{1D602}','\u{1D636}','\u{1D66A}','\u{1D69E}','\u{A79F}','\u{1D1C}','\u{AB4E}','\u{1B52}','\u{028B}','\u{03C5}','\u{1D6D6}','\u{1D710}','\u{1D74A}','\u{1D784}','\u{1D7BE}','\u{0446}','\u{057D}','\u{118D8}','\u{01D4}','\u{197E}','\u{028A}']);
 
     confusables.insert('v', vec!['\u{2228}','\u{22C1}','\u{FF56}','\u{2174}','\u{1D42F}','\u{1D463}','\u{1D497}','\u{1D4CB}','\u{1D4FF}','\u{1D533}','\u{1D567}','\u{1D59B}','\u{1D5CF}','\u{1D603}','\u{1D637}','\u{1D66B}','\u{1D69F}','\u{1D20}','\u{03BD}','\u{1D6CE}','\u{1D708}','\u{1D742}','\u{1D77C}','\u{1D7B6}','\u{0475}','\u{05DB}','\u{118C0}']);
-//TODO: get confusables for 'w', since they aren't in confusables.txt
-/*
-    confusables.insert('w', vec!['\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}','\u{}',]);
-*/
+
+    confusables.insert('w', vec!['\u{FF57}','\u{1D430}','\u{1D5D0}','\u{1D21}','\u{0461}','\u{0561}','\u{AB83}','\u{1D534}','\u{1D568}','\u{1D4CC}','\u{1D66C}','\u{026F}','\u{1D500}','\u{1D6A0}','\u{1170F}','\u{1170E}','\u{1D464}','\u{1D604}','\u{1D498}','\u{1D638}','\u{1D59C}','\u{051D}','\u{1170A}']);
 
     confusables.insert('x', vec!['\u{166E}','\u{00D7}','\u{292B}','\u{292C}','\u{2A2F}','\u{FF58}','\u{2179}','\u{1D431}','\u{1D465}','\u{1D499}','\u{1D4CD}','\u{1D501}','\u{1D535}','\u{1D569}','\u{1D59D}','\u{1D5D1}','\u{1D605}','\u{1D639}','\u{1D66D}','\u{1D6A1}','\u{0445}','\u{1541}','\u{157D}','\u{2A30}']);
 
@@ -123,14 +119,17 @@ pub fn map(input: String) -> String {
     let mut input_chars = input.chars().peekable();
     while input_chars.peek() != None {
         let next = input_chars.next().unwrap();
-        //don't process new lines and spaces, but allow them in inputs
-        if next == '\n' || next == ' ' {
-            output.push(next);
-            continue;
+        let next_confusables = confusables.get(&next);
+        match next_confusables {
+            Some(next_confusables) => {
+                let next_out = rand::thread_rng().choose(next_confusables);
+                output.push(*next_out.unwrap());
+            }    
+            None => {
+                output.push(next);
+                continue;
+            }
         }
-        //TODO: handle the error cases here instead of just blindly unwrapping.
-        let next_out = rand::thread_rng().choose(confusables.get(&next).unwrap());
-        output.push(*next_out.unwrap());
     }
     return output;
 }
