@@ -11,6 +11,7 @@ TODO:
 * Whitespace/interpunct confusables
 * Play around more with zero-width nonbreaking space (since it's not technically a whitespace char, according to unicode spec.)
 * Create a special "discrete mode" that emphasizes characters with minimal visual difference in most contexts.
+* Handle multiline input
 
 Options:
 
