@@ -5,6 +5,7 @@ authors = ["Aaron M Brown <aaron@aaronmbrown.net>"]
 
 [dependencies]
 rand = "0.4"
+getopts = "0.2"
 
 [[bin]]
 name = "samesame"

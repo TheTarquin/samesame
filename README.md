@@ -11,3 +11,10 @@ TODO:
 * Whitespace/interpunct confusables
 * Play around more with zero-width nonbreaking space (since it's not technically a whitespace char, according to unicode spec.)
 * Create a special "discrete mode" that emphasizes characters with minimal visual difference in most contexts.
+
+Options:
+
+* -d - Discrete Mode
+* -i="input" - Pass input string as an option (for script friendliness)
+* -v - Verbose mode
+* -h - Print Help

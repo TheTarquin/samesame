@@ -1,12 +1,16 @@
 use std::io;
+use std::env;
+
+extern crate getopts;
+
 mod english_confusables;
-//mod confusables;
 
 fn main() {
   let mut input = String::new();
   let mut output = String::new();
 
-//  confusables::initialize();
+  let args: Vec<String> = env::args().collect();
+  println!("{:?}", args);
 
   match io::stdin().read_line(&mut input) {
     Ok(_n) => {
