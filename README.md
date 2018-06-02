@@ -13,6 +13,7 @@ TODO:
 * Create a special "discrete mode" that emphasizes characters with minimal visual difference in most contexts.
 * Handle multiline input
 * Figure out style guide and how best to enforce in pull requests
+* Add code to use free opt as input string
 
 Options:
 

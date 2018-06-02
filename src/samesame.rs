@@ -1,5 +1,7 @@
 use std::io;
 use std::env;
+use std::fs::File;
+use std::io::prelude::*;
 
 extern crate getopts;
 use getopts::Options;
@@ -7,7 +9,7 @@ use getopts::Options;
 mod english_confusables;
 
 fn print_usage(program: &str, opts: Options) {
-    let use_text = format!("Usage: {} -i=IN_FILE [options]\n       \
+    let use_text = format!("Usage: {} -i IN_FILE [options]\n       \
                            {} [options] [TEXT]", program, program);
     print!("{}", opts.usage(&use_text));
 }
@@ -35,12 +37,21 @@ fn main() {
     print_usage(&args[0].clone(), opts);
     return;
   }
-  match io::stdin().read_line(&mut input) {
-    Ok(_n) => {
-        output = english_confusables::map(input); 
-        print!("{}", output);
-    }
-    Err(error) => println!("error: {}", error),
 
+  let out_file = opt_matches.opt_str("o");
+  println!("{:?}", out_file);
+
+  if opt_matches.opt_present("i") {
+      let in_file = opt_matches.opt_str("i");
+      let mut file = File::open(in_file.unwrap());
+      file.unwrap().read_to_string(&mut input);
+  } else {
+      match io::stdin().read_line(&mut input) {
+          Ok(_n) => {
+          }
+          Err(f) => { panic!(f.to_string()) }
+      };
   }
+  output = english_confusables::map(input); 
+  print!("{}", output);
 }
