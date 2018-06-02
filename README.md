@@ -10,10 +10,8 @@ TODO:
 * Figure out how not to have to build the hashmap in the map() function
 * Whitespace/interpunct confusables
 * Play around more with zero-width nonbreaking space (since it's not technically a whitespace char, according to unicode spec.)
-* Create a special "discrete mode" that emphasizes characters with minimal visual difference in most contexts.
-* Handle multiline input
+* Implement "discrete mode" (emphasize characters with minimal visual difference in most contexts)
 * Figure out style guide and how best to enforce in pull requests
-* Add code to use free opt as input string
 
 Options:
 
