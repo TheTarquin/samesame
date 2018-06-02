@@ -45,6 +45,9 @@ fn main() {
       let in_file = opt_matches.opt_str("i");
       let mut file = File::open(in_file.unwrap());
       file.unwrap().read_to_string(&mut input);
+  } else if !opt_matches.free.is_empty() {
+      input = opt_matches.free[0].clone();
+      input.push('\n');
   } else {
       match io::stdin().read_line(&mut input) {
           Ok(_n) => {
