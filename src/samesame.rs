@@ -38,12 +38,10 @@ fn main() {
     return;
   }
 
-  let out_file = opt_matches.opt_str("o");
-  println!("{:?}", out_file);
-
   if opt_matches.opt_present("i") {
       let in_file = opt_matches.opt_str("i");
-      let mut file = File::open(in_file.unwrap());
+      let file = File::open(in_file.unwrap());
+      //TODO: match on result and do error handling
       file.unwrap().read_to_string(&mut input);
   } else if !opt_matches.free.is_empty() {
       input = opt_matches.free[0].clone();
@@ -56,7 +54,14 @@ fn main() {
       };
   }
 
-  //TODO: file output logic goes here.
   output = english_confusables::map(input); 
-  print!("{}", output);
+
+  if opt_matches.opt_present("o") {
+      let out_file = opt_matches.opt_str("o");
+      let file = File::create(out_file.unwrap());
+      //TODO: match on result and do error handling
+      file.unwrap().write_all(output.as_bytes());
+    } else {
+      print!("{}", output);
+    }
 }
