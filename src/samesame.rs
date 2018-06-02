@@ -55,6 +55,8 @@ fn main() {
           Err(f) => { panic!(f.to_string()) }
       };
   }
+
+  //TODO: file output logic goes here.
   output = english_confusables::map(input); 
   print!("{}", output);
 }

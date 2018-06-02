@@ -1,0 +1,3 @@
+trying this shit again
+over multiple lines
+hopefully without vim cruft this time
