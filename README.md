@@ -12,6 +12,7 @@ TODO:
 * Play around more with zero-width nonbreaking space (since it's not technically a whitespace char, according to unicode spec.)
 * Implement "discrete mode" (emphasize characters with minimal visual difference in most contexts)
 * Figure out style guide and how best to enforce in pull requests
+* Figure out a better verbose logging solution. Maybe a macro?
 
 Options:
 

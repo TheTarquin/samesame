@@ -7,6 +7,7 @@ extern crate getopts;
 use getopts::Options;
 
 mod english_confusables;
+mod discrete_english_confusables;
 
 fn print_usage(program: &str, opts: Options) {
     let use_text = format!("Usage: {} -i IN_FILE [options]\n       \
@@ -54,7 +55,17 @@ fn main() {
       };
   }
 
-  output = english_confusables::map(input); 
+  if opt_matches.opt_present("d") {
+    output = discrete_english_confusables::map(input);
+    if opt_matches.opt_present("v") {
+        println!("using discrete english map");
+    }
+  } else {
+    output = english_confusables::map(input); 
+    if opt_matches.opt_present("v") {
+        println!("using regular english map");
+    }
+  }
 
   if opt_matches.opt_present("o") {
       let out_file = opt_matches.opt_str("o");
