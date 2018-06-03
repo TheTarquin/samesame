@@ -119,10 +119,13 @@ pub fn map(input: String) -> String {
     let mut input_chars = input.chars().peekable();
     while input_chars.peek() != None {
         let next = input_chars.next().unwrap();
+        //TODO: uncomment this once I get the discrete char set sorted
+        /*
         if rand::thread_rng().gen_range(0,10) > 0 {
             output.push(next);
             continue;
         }
+        */
         let next_confusables = confusables.get(&next);
         //TODO: do I want to make homograph density configurable? Do science to figure out the
         //      right threashold?
