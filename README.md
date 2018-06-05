@@ -4,7 +4,6 @@ TODO:
 * Insert random, invisible joiner characters.
 * Insert other random control chars (e.g. matched RtL/LtR chars)
 * Randomly glyph characters.
-* Swap random characters for confusables. (Again, configurable density?)
 * Figure out how to do multi-character confusables. (e.g. AA ->Ꜳ  )
 * Digit confusables
 * Figure out how not to have to build the hashmap in the map() function

@@ -8,6 +8,7 @@ use getopts::Options;
 
 mod english_confusables;
 mod discrete_english_confusables;
+mod word_joiner;
 
 fn print_usage(program: &str, opts: Options) {
     let use_text = format!("Usage: {} -i IN_FILE [options]\n       \
@@ -24,6 +25,7 @@ fn main() {
 
   let mut opts = Options::new();
   opts.optflag("d", "discrete", "use discrete mode, avoiding obvious homographs");
+  opts.optflag("z", "wordjoiners", "randomly insert zero-width word joiners into output");
   opts.optopt("i", "", "set input file name", "IN_FILE");
   opts.optopt("o", "", "set output file name", "OUT_FILE");
   opts.optflag("v", "verbose", "use verbose mode");
@@ -65,6 +67,13 @@ fn main() {
     if opt_matches.opt_present("v") {
         println!("using regular english map");
     }
+  }
+
+  //additionally randomly insert ZWNBS/Word joiners
+  //TODO: this is messy mapping output to output.
+  //      Figure out a way to build list of maps to apply
+  if opt_matches.opt_present("z") {
+      output = word_joiner::map(output);
   }
 
   if opt_matches.opt_present("o") {
