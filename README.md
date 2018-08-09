@@ -6,6 +6,18 @@ In other words: do whatever you want with it, just don't be a dick.
 
 See the LICENSE.txt file for slightly more info.
 
+BUILD:
+
+cargo build
+
+RUN:
+
+samesame "TEXT"
+
+or
+
+$cmd | samesame
+
 TODO: 
 
 * Migrate these from the README to actual issues tracking in GitHub.
