@@ -1,4 +1,14 @@
+samesame is a lightweight utility for replacing ASCII characters with homograph (look-alike) characters.
+
+samesame is under active development and is public domain software.
+
+In other words: do whatever you want with it, just don't be a dick.
+
+See the LICENSE.txt file for slightly more info.
+
 TODO: 
+
+* Migrate these from the README to actual issues tracking in GitHub.
 
 * Insert zero-width spaces between characters at random or between all of them. Maybe zero-width space density? 0%/25%/50%/100%?
 * Insert other random control chars (e.g. matched RtL/LtR chars)
