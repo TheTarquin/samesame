@@ -7,7 +7,7 @@ extern crate getopts;
 use getopts::Options;
 
 mod english_confusables;
-mod discrete_english_confusables;
+mod discreet_english_confusables;
 mod word_joiner;
 
 fn print_usage(program: &str, opts: Options) {
@@ -24,7 +24,7 @@ fn main() {
   println!("{:?}", args);
 
   let mut opts = Options::new();
-  opts.optflag("d", "discrete", "use discrete mode, avoiding obvious homographs");
+  opts.optflag("d", "discreet", "use discreet mode, avoiding obvious homographs");
   opts.optflag("z", "wordjoiners", "randomly insert zero-width word joiners into output");
   opts.optopt("i", "", "set input file name", "IN_FILE");
   opts.optopt("o", "", "set output file name", "OUT_FILE");
@@ -58,9 +58,9 @@ fn main() {
   }
 
   if opt_matches.opt_present("d") {
-    output = discrete_english_confusables::map(input);
+    output = discreet_english_confusables::map(input);
     if opt_matches.opt_present("v") {
-        println!("using discrete english map");
+        println!("using discreet english map");
     }
   } else {
     output = english_confusables::map(input); 
