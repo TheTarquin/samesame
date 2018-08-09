@@ -16,9 +16,9 @@ fn print_usage(program: &str, opts: Options) {
     print!("{}", opts.usage(&use_text));
 }
 
-fn main() {
+fn main() -> io::Result<()> {
   let mut input = String::new();
-  let mut output = String::new();
+  let mut output: String;
 
   let args: Vec<String> = env::args().collect();
   println!("{:?}", args);
@@ -38,14 +38,14 @@ fn main() {
 
   if opt_matches.opt_present("h") {
     print_usage(&args[0].clone(), opts);
-    return;
+    return Ok(());
   }
 
   if opt_matches.opt_present("i") {
       let in_file = opt_matches.opt_str("i");
       let file = File::open(in_file.unwrap());
-      //TODO: match on result and do error handling
-      file.unwrap().read_to_string(&mut input);
+      //TODO: do real error handling
+      file.unwrap().read_to_string(&mut input)?;
   } else if !opt_matches.free.is_empty() {
       input = opt_matches.free[0].clone();
       input.push('\n');
@@ -79,9 +79,11 @@ fn main() {
   if opt_matches.opt_present("o") {
       let out_file = opt_matches.opt_str("o");
       let file = File::create(out_file.unwrap());
-      //TODO: match on result and do error handling
-      file.unwrap().write_all(output.as_bytes());
+      //TODO: do real error handling
+      file.unwrap().write_all(output.as_bytes())?;
     } else {
       print!("{}", output);
     }
+
+    Ok(())
 }
