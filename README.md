@@ -10,26 +10,26 @@ See the LICENSE.txt file for slightly more info.
 
 # BUILD
 
-cargo build
+> cargo build
 
 Artifacts will be in the ./target/debug folder by default
 
 # RUN
 
-samesame "TEXT"
+> samesame "TEXT"
 
 or
 
-$cmd | samesame
+> $cmd | samesame
 
 # Options:
 
-* -d - Discreet Mode
-* -z - Insert word joiners (U+2060)
-* -i="infile" - Pass input as a file
-* -o="outfile" - Write result to a file
-* -v - Verbose mode
-* -h - Print Help
+> -d - Discreet Mode
+> -z - Insert word joiners (U+2060)
+> -i="infile" - Pass input as a file
+> -o="outfile" - Write result to a file
+> -v - Verbose mode
+> -h - Print Help
 
 # TODO: 
 
