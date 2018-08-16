@@ -1,4 +1,4 @@
-#INTRODUCTION
+# INTRODUCTION
 
 samesame is a lightweight utility for replacing ASCII characters with homograph (look-alike) characters.
 
@@ -8,13 +8,13 @@ In other words: do whatever you want with it, just don't be a dick.
 
 See the LICENSE.txt file for slightly more info.
 
-#BUILD
+# BUILD
 
 cargo build
 
 Artifacts will be in the ./target/debug folder by default
 
-#RUN
+# RUN
 
 samesame "TEXT"
 
@@ -31,7 +31,7 @@ $cmd | samesame
 * -v - Verbose mode
 * -h - Print Help
 
-#TODO: 
+# TODO: 
 
 * Migrate these from the README to actual issues tracking in GitHub.
 * Finish discreet mode character set
