@@ -24,12 +24,14 @@ or
 
 # Options:
 
-`-d - Discreet Mode
-> -z - Insert word joiners (U+2060)
-> -i="infile" - Pass input as a file
-> -o="outfile" - Write result to a file
-> -v - Verbose mode
-> -h - Print Help`
+```
+-d - Discreet Mode
+-z - Insert word joiners (U+2060)
+-i="infile" - Pass input as a file
+-o="outfile" - Write result to a file
+-v - Verbose mode
+-h - Print Help
+```
 
 # TODO: 
 
