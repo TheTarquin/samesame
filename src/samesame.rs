@@ -9,6 +9,7 @@ use getopts::Options;
 mod english_confusables;
 mod discreet_english_confusables;
 mod word_joiner;
+mod whitespace_confusables;
 
 fn print_usage(program: &str, opts: Options) {
     let use_text = format!("Usage: {} -i IN_FILE [options]\n       \
@@ -30,6 +31,7 @@ fn main() -> io::Result<()> {
   opts.optopt("o", "", "set output file name", "OUT_FILE");
   opts.optflag("v", "verbose", "use verbose mode");
   opts.optflag("h", "help", "print help menu");
+  opts.optflag("w", "whitespace", "randomly swap ASCII spaces for Unicode Whitespace characters");
 
   let opt_matches = match opts.parse(&args[1..]) {
     Ok(m) => { m }
@@ -74,6 +76,10 @@ fn main() -> io::Result<()> {
   //      Figure out a way to build list of maps to apply
   if opt_matches.opt_present("z") {
       output = word_joiner::map(output);
+  }
+
+  if opt_matches.opt_present("w") {
+      output = whitespace_confusables::map(output)
   }
 
   if opt_matches.opt_present("o") {
