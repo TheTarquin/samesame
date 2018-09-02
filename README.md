@@ -31,4 +31,5 @@ or
 -o="outfile" - Write result to a file
 -v - Verbose mode
 -h - Print Help
+-w - Swap ' ' for various unicode whitespaces
 ```
