@@ -32,4 +32,5 @@ or
 -v - Verbose mode
 -h - Print Help
 -w - Swap ' ' for various unicode whitespaces
+-n - Swap numbers out as well as letters
 ```

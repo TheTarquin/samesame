@@ -10,6 +10,7 @@ mod english_confusables;
 mod discreet_english_confusables;
 mod word_joiner;
 mod whitespace_confusables;
+mod number_confusables;
 
 fn print_usage(program: &str, opts: Options) {
     let use_text = format!("Usage: {} -i IN_FILE [options]\n       \
@@ -32,6 +33,7 @@ fn main() -> io::Result<()> {
   opts.optflag("v", "verbose", "use verbose mode");
   opts.optflag("h", "help", "print help menu");
   opts.optflag("w", "whitespace", "randomly swap ASCII spaces for Unicode Whitespace characters");
+  opts.optflag("n", "numbers", "swaps out numbers with homographs");
 
   let opt_matches = match opts.parse(&args[1..]) {
     Ok(m) => { m }
@@ -71,6 +73,12 @@ fn main() -> io::Result<()> {
     }
   }
 
+  if opt_matches.opt_present("n"){
+    output = number_confusables::map(output);
+    if opt_matches.opt_present("v") {
+        println!("using number map");
+    }
+  }
   //additionally randomly insert ZWNBS/Word joiners
   //TODO: this is messy mapping output to output.
   //      Figure out a way to build list of maps to apply
