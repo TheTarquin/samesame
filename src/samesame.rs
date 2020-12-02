@@ -11,6 +11,7 @@ mod discreet_english_confusables;
 mod word_joiner;
 mod whitespace_confusables;
 mod number_confusables;
+mod ligature_confusables;
 
 fn print_usage(program: &str, opts: Options) {
     let use_text = format!("Usage: {} -i IN_FILE [options]\n       \
@@ -34,6 +35,7 @@ fn main() -> io::Result<()> {
   opts.optflag("h", "help", "print help menu");
   opts.optflag("w", "whitespace", "randomly swap ASCII spaces for Unicode Whitespace characters");
   opts.optflag("n", "numbers", "swaps out numbers with homographs");
+  opts.optflag("l", "ligatures", "swaps out letters with ligatures");
 
   let opt_matches = match opts.parse(&args[1..]) {
     Ok(m) => { m }
@@ -70,6 +72,13 @@ fn main() -> io::Result<()> {
     output = english_confusables::map(input); 
     if opt_matches.opt_present("v") {
         println!("using regular english map");
+    }
+  }
+
+  if opt_matches.opt_present("l") {
+    output = ligature_confusables::map(output);
+    if opt_matches.opt_present("v") {
+        println!("using ligature map");
     }
   }
 

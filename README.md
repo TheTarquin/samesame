@@ -33,4 +33,5 @@ or
 -h - Print Help
 -w - Swap ' ' for various unicode whitespaces
 -n - Swap numbers out as well as letters
+-l - Swap out character pairs for equivalent ligatures
 ```
