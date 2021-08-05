@@ -39,7 +39,7 @@ fn main() -> io::Result<()> {
 
   let opt_matches = match opts.parse(&args[1..]) {
     Ok(m) => { m }
-    Err(f) => { panic!(f.to_string()) }
+    Err(f) => { panic!("{}", f.to_string()) }
   };
 
   if opt_matches.opt_present("h") {
@@ -59,7 +59,7 @@ fn main() -> io::Result<()> {
       match io::stdin().read_line(&mut input) {
           Ok(_n) => {
           }
-          Err(f) => { panic!(f.to_string()) }
+          Err(f) => { panic!("{}", f.to_string()) }
       };
   }
 
